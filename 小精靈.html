@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *,::before,::after{
+            box-sizing: border-box;
+        }
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            /* padding: 20px; */
+        }
+        .all{
+            width: 100%;
+            height: 100vh;
+            background-image: url(./小精靈img/1504.jpg_wh860.jpg);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .box{
+            width: 100px;
+            height: 50px;
+            position: relative;
+            z-index: 9;
+        }
+        .box-1{
+            background-color:darkgreen;
+            border-radius: 50px 50px 0 0;
+            /* overflow: hidden; */
+            animation-name: big-ball-top;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            position: absolute;
+            left: 500px;
+            top: 550px;
+            
+        }
+        .box-1::before{
+            content: "";
+            width: 15px;
+            height: 15px;
+            background-color: beige;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            border-radius: 50%;
+        }
+        .box-1::after{
+            content: "";
+            width: 8px;
+            height: 8px;
+            background-color: black;
+            position: absolute;
+            right: 21px;
+            top: 25px;
+            border-radius: 50%;
+        }
+        .box-2{
+            width: 100px;
+            height: 50px;
+            background-color:darkgreen;
+            border-radius: 0 0 50px 50px;
+            position: absolute;
+            top: 100%;
+            animation-name: big-ball-bottom;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            
+        }
+        .box-3{
+            background-color: blueviolet;
+            width: 25px;
+            height: 25px;
+            left: 250px;
+            top: 150px;
+            animation-name: move-box-1;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+        .box-4{
+            background-color: rgb(15, 151, 209);
+            width: 25px;
+            height: 25px;
+            left: 850px;
+            top: 300px;
+            animation-name: move-box-2;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+        .ball{
+            border-radius: 50%;
+            background-color: blue;
+            width: 25px;
+            height: 25px;
+            /* left: 500px; */
+            position: absolute;
+            top: -30px;
+            left: 0px;
+            
+        }
+        .small-ball{
+            animation-name: small-ball;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            z-index: -9;
+        }
+        @keyframes big-ball-top {
+            0%{
+                left: 450px;
+                top: 430px;
+                transform: rotateZ(0deg);
+            }
+            25%{
+                left: 400px;
+                top: 400px;
+            }
+            50%{
+                transform: rotateZ(-45deg);
+                /* left: 0px; */
+                background-color:cyan;
+                left: 350px;
+                top: 350px;
+            }
+            75%{
+                left: 250px;
+                top: 300px;
+                transform: rotateZ(0deg);
+            }
+            100%{
+                left: 165px;
+                top: 200px;
+            }
+        }
+        @keyframes big-ball-bottom {
+            0%{
+                left: 0;
+            }
+            25%{
+                
+            }
+            50%{
+                transform: rotateZ(45deg);
+                left: -19px;
+                top: 50px;
+                background-color:cyan
+            }
+            75%{
+                
+            }
+            100%{
+                left: 0;
+                
+            }
+        }
+        @keyframes small-ball {
+            0%{
+                left: 250px;
+                background-color: rgb(219, 85, 51);
+            }
+            25%{
+                left: 125px;
+                
+            }
+            50%{
+                transform: rotateZ(45deg);
+                left: 250px;
+                
+            }
+            70%{
+                background-color: blue;
+                left: 75px;
+            }
+            71%{
+                background-color: transparent;
+            }
+            75%{
+                left: 25px;
+                background-color: transparent;
+            }
+            100%{
+                left: 25px;
+                background-color: transparent;
+            }
+        }
+
+        @keyframes move-box-1 {
+            0%{
+                
+            }
+            25%{
+                top: 150px;
+            }
+            50%{
+                transform: rotateZ(360deg);
+                left: 450px;
+                top: 100px;
+                background-color: cadetblue;
+                width: 50px;
+                height: 50px;
+            }
+            
+            75%{
+                
+            }
+            100%{
+                left: 700px;
+            }
+        }
+        @keyframes move-box-2 {
+            0%{
+                
+            }
+            25%{
+                top: 200px;
+            }
+            50%{
+                left: 850px;
+            }
+            
+            75%{
+                width: 50px;
+                height: 50px;
+            }
+            100%{
+                
+                transform: rotateZ(360deg);
+                left: 1200px;
+                top: 300px;
+                background-color: rgb(16, 4, 171);
+                
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="all">
+        <div class="box box-1">
+            <div class="box box-2">
+                <div class="ball small-ball"></div>
+            </div>
+            
+        </div>
+        <div class="box box-3"></div>
+        <div class="box box-4"></div>
+    </div>
+    
+</body>
+</html>
